@@ -23,4 +23,8 @@ if remotedesktop in desktops:
             url=f"http://ip-api.com/json/{ip}"
             r=requests.get(url)
             data=r.json()
-            print(f"{data['city']}, {data['country']}")
+            country=data['country']
+            city=data['city']
+            if country=="India":
+                print(f"{ip} is located in {city}, {country}")
+                break
