@@ -18,7 +18,7 @@ if remotedesktop in desktops:
         if not find in detected_connections:
             detected_connections.append(find)
             find=find.replace("TCP","").replace("ESTABLISHED","").replace(" ","")
-            ip=find.split("7070")[1].split(":")[0]
+            ip=find.split(port)[1].split(":")[0]
             print(f"{remotedesktop} is connected from {ip}")
             url=f"http://ip-api.com/json/{ip}"
             r=requests.get(url)
